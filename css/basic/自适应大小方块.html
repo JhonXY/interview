@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div.container {
+      width: 50%;
+    }
+    /* width与padding-box值为相同百分比则为正方形
+    其实就是用内边距撑起容器
+     */
+    .box {
+      display: inline-block;
+      width: 50%;
+      /* height为0很重要，这样内容就会被强制挤到padding中
+      不然height会随着内容变化 */
+      height: 0;
+      padding-bottom: 40%;
+      overflow: hidden;
+      border: 1px solid #e7e7e7;
+    }
+    .box img {
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+  <div class="box">
+    1111
+    <img class="" alt="Focus on your apps" data-hires="https://www-assets0.herokucdn.com/assets/home/hero/focus_2x-315bdf6fd4e19d85ceaf800528afb680190b79056a23516428b4cb4ff61d37c2.png"
+    src="https://www-assets3.herokucdn.com/assets/home/hero/focus-647c57d2effb7d2dfb5871161afab3cf097de6339c02e85d84ea14747800fcb0.png">
+  </div>
+  </div>
+</body>
+</html>

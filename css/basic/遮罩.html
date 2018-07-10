@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+  .center {
+    width: 50px;
+    height: 30px;
+    line-height: 30px;
+    color: #fff;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
+    background: rgba(236, 172, 172, 0.733);
+    border-radius: 5px;
+    text-align: center;
+    z-index: 3;
+  }
+  /* 遮罩样式切换 */
+  .dimmed {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    background: rgba(0, 0, 0, 0.4);
+    /* 设置z-index实现遮罩的程度 */
+    z-index: 2;
+  }
+  </style>
+</head>
+<body>
+  <div class="change">
+  </div>
+  <div class="center">
+    click
+  </div>
+  <script>
+  function hasClass(obj, cls) {
+    // class字符串匹配到了该正则会返回一个数组，无匹配则返回一个null
+    // 正则为该string中是否有该cls并其前后可以有空格
+    return !!obj.className.match(new RegExp('(\\s|^)' + cls + '(\\s|$)'));
+  }
+  function addClass(obj, cls) {
+    !this.hasClass(obj, cls) && (obj.className += " " + cls)
+  }
+  function removeClass(obj, cls) {
+    if (hasClass(obj, cls)) {
+      var reg = new RegExp('(\\s|^)' + cls + '(\\s|$)');
+      obj.className = obj.className.replace(reg, '');
+    }
+  }
+  function toggleClass(obj,cls){
+    if(hasClass(obj,cls)){
+        removeClass(obj, cls);
+    }else{
+        addClass(obj, cls);
+    }
+  }  
+  window.onload = ()=>{
+    let button= document.querySelector('.center')
+    let change= document.querySelector('.change')
+    button.addEventListener('click', ()=>{
+      toggleClass(change, 'dimmed')
+    })
+  }
+  </script>
+</body>
+</html>

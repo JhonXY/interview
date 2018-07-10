@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+  .b { width:100px; height:200px; background:#ccc; }
+  /* 只水平居中 */
+  .b1 {
+    margin: 0 auto;
+  }
+  body {
+    position: relative;
+  }
+  .b2 {
+    /* 绝对定位方式（必须已知子元素宽高，并且父元素需要relative定位） */
+    position:absolute;
+    left:50%;
+    margin-left:-100px;
+  }
+  .b3 {
+    /* 绝对定位方式（不用知道子元素宽高，但父元素需要relative定位） */
+    position:absolute;
+    left:0;
+    right:0;
+    margin:0 auto;
+  }
+
+  /* 单行内容只需将line-height设置成与高度一样 */
+  /* 内容就水平垂直居中了 */
+  /* 这种方法对运用在小元素上是非常有用的，比如说让一个button、图片或者单行文本字段。 */
+
+  /* 垂直水平居中 */
+  body, html {
+    height: 100%;
+    margin: 0;
+    text-align: center;
+  }
+  .b4 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -50px;
+    margin-top: -100px;
+  }
+  .b5 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%)
+  }
+
+  /* 使用表格的方式渲染 */
+  /* 会充满整个body */
+  body {
+    width: 100%;
+    /* display: table; */
+  }
+  .b6 {
+    text-align: center;
+    display: table-cell;/*让元素以表格的单元素格形式渲染*/ 
+    vertical-align: middle;/*使用元素的垂直对齐*/
+  }
+
+  /* 使用伪元素 */
+  .b7 {
+    
+    white-space: nowrap;
+    display: inline-block;
+    vertical-align: middle;
+    width: 300px;
+  }
+  /* 为需要居中的元素的容器添加一个before伪元素 */
+  body::before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -0.25em; /* Adjusts for spacing */
+  }
+
+  </style>
+</head>
+
+<body>
+  <div class="b b7">
+    111
+  </div>
+</body>
+</html>

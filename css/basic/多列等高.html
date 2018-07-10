@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+  /* 使用flex能非常快得实现多列等高，且不需要hack 
+  只需要其中一个设置height即可*/
+  .web_width{
+		width: 100%;
+		overflow: hidden;	
+    display: flex;
+    justify-content: center;
+	}
+	.left{
+		width: 20%;
+    height: 200px;
+		background: #66afe9;
+	}
+	.right{
+		width: 50%;
+		background: #f00;
+	}
+  .right2 {
+    width: 20%; 
+    /* 这里不设置高度 */
+    background: rgb(143, 235, 101);
+  }
+  .right3 {
+    width: 10%; 
+    /* 这里不设置高度 */
+    background: rgb(233, 235, 101);
+  }
+  /* 另一种方法比较hack
+  且只能两列稳定 */
+  .web_width{
+		width: 100%;
+		overflow: hidden;	
+	}
+	.left{
+		float: left;
+		width: 20%;
+		background: #66afe9;
+    /* 这里的padding要与margin相加为0 
+    且padding要大于右列的height */
+		padding-bottom: 2000px;		
+		margin-bottom: -2000px;		
+	}
+	.right{
+		float: right;
+		width: 80%;
+		height: 20em;
+		background: #f00;
+	}
+
+  </style>
+</head>
+<body>
+  <div class="web_width">
+    <div class="left">
+      111
+    </div>
+    <div class="right">
+      111
+    </div>
+    <div class="right2">
+      111
+    </div>
+    <div class="right3">
+      111
+    </div>
+  </div>
+  111
+</body>
+</html>

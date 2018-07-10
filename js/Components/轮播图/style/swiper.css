@@ -1,0 +1,77 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+div.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -100px;
+  margin-left: -200px;
+  height: 200px;
+  width: 400px;
+  border: 1px solid #e6e6e6;
+  overflow: hidden;
+}
+
+ul, li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: inline-block;
+}
+
+ul {
+  /* transform: translateX(0); */
+  will-change: transform;
+  transition: .5s all;
+  width: 400%;
+  overflow: hidden;
+  margin-left: 0%;
+}
+
+ul.skip {
+  transition: none;
+}
+
+li {
+  width: 400px;
+  height: 200px;
+  float: left;
+}
+
+img {
+  display: inline-block;
+  height: 100%;
+}
+
+.left {
+  cursor: pointer;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  transform: rotate(45deg);
+  left: 0;
+  top: 50%;
+  margin-top: -15px;
+  margin-left: 25px;
+  border-left: 5px solid #fff;
+  border-bottom: 5px solid #fff;
+}
+
+.right {
+  cursor: pointer;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  transform: rotate(45deg);
+  right: 0;
+  top: 50%;
+  margin-top: -15px;
+  margin-right: 25px;
+  border-right: 5px solid #fff;
+  border-top: 5px solid #fff;
+}

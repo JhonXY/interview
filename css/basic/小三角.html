@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    /* 背景容器 */
+    .box {
+      position: relative;
+      width: 100px;
+      height: 100px;
+      border-radius: 3px;
+      margin: 100px;
+      border: 1px solid #b5b5b5;
+    }
+    /* 表框层，延长边框角 */
+    .box::after {
+      content: "";
+      position: absolute;
+      /* border全显示则会显示大三角 */
+      border: 20px solid transparent;
+      border-bottom: 20px solid transparent;
+      border-left: 20px solid #b5b5b5;
+      border-top: 20px solid #b5b5b5;
+      /* 只设置两个border会显示小三角 */
+      /* border-bottom: 20px solid transparent;
+      border-left: 20px solid #b5b5b5;  */
+      bottom: -20px;
+      left: 10px;
+      z-index: 999;
+    }
+    /* 背景色层覆盖，小于边框层 */
+    .box::before {
+      content: "";
+      position: absolute;
+      border: 19px solid transparent;
+      border-bottom: 19px solid transparent;
+      border-left: 19px solid #ffffff;
+      border-top: 19px solid #ffffff;
+      /* border-bottom: 19px solid transparent;
+      border-left: 19px solid #ffffff;  */
+      bottom: -18px;
+      left: 11px;
+      z-index: 1000;
+    }
+  </style>
+</head>
+<body>
+  <div class="box"></div>
+</body>
+</html>
