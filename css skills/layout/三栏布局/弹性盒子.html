@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+  html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  .container {
+    display: flex;
+    justify-content: space-between
+  }
+  .left {
+    width: 300px;
+    height: 100px;
+    background: yellow;
+  }
+  .center {
+    flex: 1;
+    background: green;
+  }
+  .right {
+    width: 300px;
+    height: 100px;
+    background: red;
+  }
+  </style>
+</head>
+<body>
+  <section class="layout">
+    <h1>弹性盒子</h1>
+    <article class="container">
+      <div class="left"></div>
+      <div class="center">
+        <h2>flexbox解决</h2>
+        <p>felxbox布局是css3里新出的一个，它就是为了解决上述两种方式的不足出现的，是比较完美的一个。目前移动端的布局也都是用flexbox。 
+felxbox的缺点就是不能兼容IE8及以下浏览器。</p>
+      </div>
+      <div class="right">
+      </div>
+    </article>
+  </section>
+</body>
+</html>

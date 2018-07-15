@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <!-- 绝对定位布局优点，很快捷，设置很方便，而且也不容易出问题，可以很快的就能想出这种布局方式。  -->
+  <!-- 缺点就是，绝对定位是脱离文档流的，意味着下面的所有子元素也会脱离文档流，这就导致了这种方法的有效性和可使用性是比较差的。 -->
+  <style>
+  html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  .layout.absolute .left-center-right>div{
+    position: absolute;
+  }
+  .layout.absolute .left{
+    left:0;
+    width: 300px;
+    background: red;
+    height: 100px;
+  }
+  .layout.absolute .center{
+    left: 300px;
+    right: 300px;
+    background: yellow;
+  }
+  .layout.absolute .right{
+    right:0;
+    width: 300px;
+    background: blue;
+    height: 100px;
+  }
+  </style>
+</head>
+<body>
+  <section class="layout absolute">
+    <h1>三栏布局</h1>
+    <article class="left-center-right">
+      <div class="left"></div>
+      <div class="center">
+        <h2>绝对定位解决方案</h2>
+          1.这是三栏布局的绝对定位解决方案；
+          2.这是三栏布局的绝对定位解决方案;
+      </div>
+      <div class="right"></div>
+    </article>
+  </section>
+</body>
+</html>

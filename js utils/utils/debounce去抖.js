@@ -1,4 +1,4 @@
-function throttle(method, context) {
+function debounce(method, context) {
   clearTimeout(method.tId);
 
   method.tId = setTimeout(function () {
@@ -7,7 +7,7 @@ function throttle(method, context) {
 }
 
 // 合理点
-function throttle(method, delay) {
+function debounce(method, delay) {
   var timer = null;
 
   return function () {

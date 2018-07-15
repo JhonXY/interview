@@ -5,7 +5,7 @@ function throttle(method, duration, delay) {
 
   return function () {
     var context = this,
-      args = arguments,
+      args = method.arguments,
       // 记录下当前时间
       current = new Date();
     // 函数节流里的思路

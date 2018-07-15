@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+  html, body {
+    margin: 0;
+    padding: 0;
+  }
+  .container {
+    border: 1px solid #e6e6e6;
+    width: 200px;
+    height: 200px;
+    margin: 20px 0 20px 20px;
+  }
+  .lazy-loading {
+    background: url(./imgs/blankbg.gif) 50% 50% no-repeat;
+  }
+  img {
+    display: inline-block;
+    height: auto;
+    /* 图片标签的width不会超过图片本身的像素宽*/
+    width: 100%;
+    max-width: 100%; 
+  }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img class="lazy-loading" src="./imgs/blank.gif"  data-src="./imgs/1.jpg">
+  </div>
+  <div class="container">
+    <img class="lazy-loading" src="./imgs/blank.gif" data-src="./imgs/2.jpg">
+  </div>
+  <div class="container">
+    <img class="lazy-loading" src="./imgs/blank.gif" data-src="./imgs/3.jpg">
+  </div>
+  <div class="container">
+    <img class="lazy-loading" src="./imgs/blank.gif" data-src="./imgs/4.jpg">
+  </div>
+  <div class="container">
+    <img class="lazy-loading" src="./imgs/blank.gif" data-src="./imgs/5.jpg">
+  </div>
+  <div class="container">
+    <img class="lazy-loading" src="./imgs/blank.gif" data-src="./imgs/6.jpg">
+  </div>
+  <div class="container">
+    <img class="lazy-loading" src="./imgs/blank.gif" data-src="./imgs/8.jpg">
+  </div>
+  <div class="container">
+    <img class="lazy-loading" src="./imgs/blank.gif" data-src="./imgs/7.jpg">
+  </div>
+
+  <script src="./index.js"></script>
+</body>
+</html>
