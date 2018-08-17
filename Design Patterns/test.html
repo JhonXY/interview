@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script> 
+  const creatNode = () => {
+    const imgNode = document.createElement('img')
+    document.body.appendChild(imgNode)
+    return imgNode
+  }
+
+  const loadImage = (function () {
+    const imgNode = creatNode()
+    return {
+      setSrc: function (src) {
+        imgNode.src = src
+      }
+    }
+  })()
+
+  const proxyImage = (function () {
+    const img = new Image() // 创建一个img用于加载图片但不显示
+    img.onload = function() { // 图片加载完后将该图片放在需要懒加载的图片上
+      loadImage.setSrc(this.src)
+    }
+    return {
+      setSrc: function(src) {
+        loadImage.setSrc('https://oimagec1.ydstatic.com/image?id=-776080481947776892&product=dict-homepage&w=200&h=150&fill=0&cw=200&ch=150&sbc=0&cgra=CENTER')
+        img.src = src
+      }
+    }
+  })()
+
+  proxyImage.setSrc('https://oimageb7.ydstatic.com/image?id=677491471763263828&product=dict-homepage&w=200&h=150&fill=0&cw=200&ch=150&sbc=0&cgra=CENTER&of=jpeg')  
+  proxyImage.setSrc('https://oimageb7.ydstatic.com/image?id=677491471763263828&product=dict-homepage&w=200&h=150&fill=0&cw=200&ch=150&sbc=0&cgra=CENTER&of=jpeg')  
+  proxyImage.setSrc('https://oimageb7.ydstatic.com/image?id=677491471763263828&product=dict-homepage&w=200&h=150&fill=0&cw=200&ch=150&sbc=0&cgra=CENTER&of=jpeg')  
+  proxyImage.setSrc('https://oimageb7.ydstatic.com/image?id=677491471763263828&product=dict-homepage&w=200&h=150&fill=0&cw=200&ch=150&sbc=0&cgra=CENTER&of=jpeg')  
+  proxyImage.setSrc('https://oimageb7.ydstatic.com/image?id=677491471763263828&product=dict-homepage&w=200&h=150&fill=0&cw=200&ch=150&sbc=0&cgra=CENTER&of=jpeg')  
+  </script>
+</body>
+</html>
